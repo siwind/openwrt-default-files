@@ -21,6 +21,7 @@ uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 
 #uci network
 #uci set network.lan.ipaddr='192.168.1.1'
+uci set network.lan.ipaddr='192.168.10.1'
 #uci set network.lan.netmask='255.255.255.0'
 
 #uci network of wan
@@ -29,7 +30,7 @@ uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 #uci set network.wan.password='xxx'
 
 #global ipv6 prefix
-#uci set network.globals.ula_prefix='fd00:100:100::/48'
+uci set network.globals.ula_prefix='fd00:100:100::/48'
 
 #uci commit system
 
