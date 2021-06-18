@@ -20,6 +20,7 @@ uci add_list system.ntp.server="cn.pool.ntp.org"
 uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 
 #uci network
+
 #uci set network.lan.ipaddr='192.168.1.1'
 uci set network.lan.ipaddr='192.168.10.1'
 #uci set network.lan.netmask='255.255.255.0'
@@ -31,6 +32,11 @@ uci set network.lan.ipaddr='192.168.10.1'
 
 #global ipv6 prefix
 uci set network.globals.ula_prefix='fd00:100:100::/48'
+
+#set hosts
+echo "192.168.10.1        gw      fw"         >> /etc/hosts
+echo "fd00:100:100::1        gw6      fw6"      >> /etc/hosts
+
 
 #uci commit system
 
