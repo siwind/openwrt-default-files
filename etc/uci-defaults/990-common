@@ -33,14 +33,14 @@ uci set network.globals.ula_prefix='fd00:100:200::/48'
 if [ ! -z "$EWIFI" ]; then
 	uci set wireless.@wifi-device[0].disabled=0
 	uci set wireless.@wifi-iface[0].disabled=0
-	uci set wireless.@wifi-iface[0].ssid='xxx'
+	uci set wireless.@wifi-iface[0].ssid='XYJC-2.4G'
 	uci set wireless.@wifi-iface[0].encryption='psk-mixed'
-	uci set wireless.@wifi-iface[0].key='xxx'
+	uci set wireless.@wifi-iface[0].key='88888888'
 	uci set wireless.@wifi-device[1].disabled=0
 	uci set wireless.@wifi-iface[1].disabled=0
-    uci set wireless.@wifi-iface[1].ssid='xxx-5G'
+    uci set wireless.@wifi-iface[1].ssid='XYJC-5G'
 	uci set wireless.@wifi-iface[1].encryption='psk2'
-	uci set wireless.@wifi-iface[1].key='xxx'
+	uci set wireless.@wifi-iface[1].key='88888888'
 fi
 
 # mirror of openwrt 
@@ -59,7 +59,7 @@ egrep -q  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "    /etc/crontab
 	echo  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "   >> /etc/crontabs/root
 
 echo "40 4 * * * /etc/init.d/frpc restart" >> /etc/crontabs/root
-echo "*/10 * * * * /etc/init.d/frpc restart" >> /etc/crontabs/root
+#echo "*/10 * * * * /etc/init.d/frpc restart" >> /etc/crontabs/root
 fi
 
 #dnsmasq setting
