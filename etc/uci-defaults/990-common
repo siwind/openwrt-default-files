@@ -20,7 +20,7 @@ uci add_list system.ntp.server="cn.pool.ntp.org"
 uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 
 #uci network
-#uci set network.lan.ipaddr='192.168.1.1'
+#uci set network.lan.ipaddr='192.168.6.1'
 #uci set network.lan.netmask='255.255.255.0'
 
 #uci network of wan
@@ -40,7 +40,7 @@ uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 if [ ! -z "$EWIFI" ]; then
 	uci set wireless.@wifi-device[0].disabled=0
 	uci set wireless.@wifi-iface[0].disabled=0
-	#uci set wireless.@wifi-iface[0].ssid='OpenWrt'
+	uci set wireless.@wifi-iface[0].ssid='OpenWrt'
 	#uci set wireless.@wifi-iface[0].encryption='psk-mixed or psk2'
 	#uci set wireless.@wifi-iface[0].key='12345678'
     #uci set wireless.@wifi-iface[0].wds='1'
@@ -48,6 +48,7 @@ if [ ! -z "$EWIFI" ]; then
     #5G-wifi
 	uci set wireless.@wifi-device[1].disabled=0
 	uci set wireless.@wifi-iface[1].disabled=0
+	uci set wireless.@wifi-iface[1].ssid='OpenWrt-5G'
 fi
 
 # mirror of openwrt 
