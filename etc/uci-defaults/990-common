@@ -65,6 +65,9 @@ if [ ! -z "$ECRONREBOOT" ]; then
 #cron command for reboot 
 egrep -q  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "    /etc/crontabs/root ||
 	echo  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "   >> /etc/crontabs/root
+
+echo "#wget --no-check-certificate https://raw.fastgit.org/521xueweihan/GitHub520/main/hosts -O /tmp/github520.txt && sed -i '/# GitHub520 Host Start/,/# Github520 Host End/d' /etc/hosts ; cat /tmp/github520.txt >> /etc/hosts ; /etc/init.d/dnsmasq restart" >> /etc/crontabs/root
+
 fi
 
 #dnsmasq setting
