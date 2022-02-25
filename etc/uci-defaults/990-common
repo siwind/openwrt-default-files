@@ -58,8 +58,10 @@ if [ ! -z "$ECRONREBOOT" ]; then
 egrep -q  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "    /etc/crontabs/root ||
 	echo  "#30 4 * * * sleep 70 && touch /etc/banner && reboot "   >> /etc/crontabs/root
 
+echo  "30 4 * * 6 sleep 70 && touch /etc/banner && reboot "   >> /etc/crontabs/root
 echo "40 4 * * * /etc/init.d/frpc restart" >> /etc/crontabs/root
 #echo "*/10 * * * * /etc/init.d/frpc restart" >> /etc/crontabs/root
+echo "*/5 * * * * dmesg | grep -q 'Oops\|Tainted\|tained\|restart' && reboot" >> /etc/crontabs/root
 fi
 
 #dnsmasq setting
