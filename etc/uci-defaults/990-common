@@ -83,7 +83,7 @@ egrep -q  "expand-hosts"  /etc/dnsmasq.conf ||
 #uci commit vlmcsd
 
 # Write everything to flash
-#uci commit
+uci commit
 
 fi   #endof EGSET
 
