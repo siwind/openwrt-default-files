@@ -63,8 +63,8 @@ sed -i 's/downloads.openwrt.org/mirrors.cloud.tencent.com\/openwrt/g' /etc/opkg/
 
 if [ ! -z "$ECRONREBOOT" ]; then
 #cron command for reboot 
-#egrep -q  "30 4 * * * sleep 70 && touch /etc/banner && reboot"    /etc/crontabs/root ||
-#	echo  "#30 4 * * * sleep 70 && touch /etc/banner && reboot"   >> /etc/crontabs/root
+#egrep -q  "sleep 70 && touch /etc/banner && reboot"    /etc/crontabs/root ||
+#	echo  "30 4 * * * sleep 70 && touch /etc/banner && reboot"   >> /etc/crontabs/root
 
 egrep -q "sleep 70 && touch /etc/banner && reboot" /etc/crontabs/root ||
 	echo  "30 4 * * 6 sleep 70 && touch /etc/banner && reboot"   >> /etc/crontabs/root
