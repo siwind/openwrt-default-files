@@ -7,6 +7,8 @@ EWIFI=1
 #EROOTPASS=1
 ECRONREBOOT=1
 
+ELAN=0
+
 if [ ! -z "$EGSET" ]; then
 
 # set simplified chinese
@@ -19,17 +21,20 @@ uci set system.@system[0].zonename=Asia/Shanghai
 uci add_list system.ntp.server="cn.pool.ntp.org"
 uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 
-#uci network
-#uci set network.lan.ipaddr='192.168.6.1'
-#uci set network.lan.netmask='255.255.255.0'
+
+if [ ! -z "$ELAN" ]; then
+	#uci network
+	uci set network.lan.ipaddr='192.168.6.1'
+	uci set network.lan.netmask='255.255.255.0'
+
+	#global ipv6 prefix
+	uci set network.globals.ula_prefix='fd00:100:200::/48'
+fi
 
 #uci network of wan
 #uci set network.wan.proto='pppoe'
 #uci set network.wan.username='xxx'
 #uci set network.wan.password='xxx'
-
-#global ipv6 prefix
-#uci set network.globals.ula_prefix='fd00:100:100::/48'
 
 #uci commit system
 
