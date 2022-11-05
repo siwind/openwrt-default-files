@@ -7,7 +7,7 @@ EWIFI=1
 #EROOTPASS=1
 ECRONREBOOT=1
 
-ELAN=0
+ELAN=
 
 if [ ! -z "$EGSET" ]; then
 
