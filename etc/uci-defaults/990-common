@@ -22,6 +22,7 @@ uci add_list system.ntp.server="cn.pool.ntp.org"
 uci add_list system.ntp.server="ntp.sjtu.edu.cn"
 
 
+#caution: these will make connection lost.
 if [ ! -z "$ELAN" ]; then
 	#uci network
 	uci set network.lan.ipaddr='192.168.6.1'
