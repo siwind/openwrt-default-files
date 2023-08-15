@@ -75,8 +75,8 @@ if [ ! -z "$ECRONREBOOT" ]; then
 egrep -q "sleep 70 && touch /etc/banner && reboot" /etc/crontabs/root ||
 	echo  "30 4 * * 6 sleep 70 && touch /etc/banner && reboot"   >> /etc/crontabs/root
 
-egrep -q  "dmesg | grep -q 'Oops\|Tainted\|tained\|restart' && reboot"   /etc/crontabs/root ||
-	echo "#*/5 * * * * dmesg | grep -q 'Oops\|Tainted\|tained\|restart' && reboot"  >>  /etc/crontabs/root
+#egrep -q  "dmesg | grep -q 'Oops\|Tainted\|tained\|restart' && reboot"   /etc/crontabs/root ||
+#	echo "#*/5 * * * * dmesg | grep -q 'Oops\|Tainted\|tained\|restart' && reboot"  >>  /etc/crontabs/root
 
 #echo "#wget --no-check-certificate https://raw.hellogithub.com/hosts  -O /tmp/github520.txt && sed -i '/# GitHub520 Host Start/,/# Github520 Host End/d' /etc/hosts ; cat /tmp/github520.txt >> /etc/hosts ; /etc/init.d/dnsmasq restart" >> /etc/crontabs/root
 
